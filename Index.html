@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Will You Be My Girlfriend?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: pink;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px #ff69b4;
+    }
+
+    .button-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.8em;
+      color: white;
+      font-weight: bold;
+      opacity: 0;
+      animation: none;
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    footer {
+      margin-top: 100px;
+      color: white;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Do you want to be my girlfriend?</h1>
+
+  <div class="button-container">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <div id="message"></div>
+
+  <footer>By Jerry</footer>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * 300) - 150;
+      const y = Math.floor(Math.random() * 300) - 150;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    document.getElementById('yesBtn').addEventListener('click', () => {
+      alert("Yay! Let's be happy together!");
+      message.textContent = "Let's together";
+      message.style.animation = "fadeInScale 1s ease forwards";
+    });
+  </script>
+
+</body>
+</html>
